@@ -4,6 +4,7 @@
   z-index: 999;
   inset: 0;
   background-color: $almost-black;
+  display: none;
   @keyframes rotation {
     100% {
       transform: rotate(360deg);
