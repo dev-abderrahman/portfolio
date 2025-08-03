@@ -13,7 +13,8 @@ header {
     color: $white;
     font-size: 32px;
     &::before {
-      @extend %before-after;
+      content: "";
+      position: absolute;
       left: 0;
       width: 4px;
       height: 100%;
@@ -37,14 +38,13 @@ header {
         padding: 0 10px;
         border-radius: 32px;
         font-size: $text-size;
-        transition: .3s linear;
+        transition: 0.3s linear;
         &.active-item {
           background: $orange;
         }
-        &:hover:not(.active-item){
-            background-color: #4b4a45;
+        &:hover:not(.active-item) {
+          background-color: #4b4a45;
         }
-        
       }
     }
   }

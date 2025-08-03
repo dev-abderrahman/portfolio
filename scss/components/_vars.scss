@@ -5,14 +5,10 @@ $dark-gray: #403d39ff;
 $almost-black: #1f1e1d;
 $orange: #ff8757;
 
-
 $heading-size: 32px;
 $text-size: 18px;
 
-%before-after{
-    content: "";
-    position: absolute;
-}
+
 @mixin flex-box($justify, $items, $gap: null, $direction: null){
     display: flex;
     justify-content: $justify;
