@@ -378,9 +378,9 @@ header .external-link button:hover .external-span-icon svg {
 .card-project:hover {
   border-color: #fffefc;
 }
-.card-project:hover .img-container {
+.card-project:hover .project-img-container {
   border-color: #fffefc;
 }
-.card-project:hover .img-container img {
+.card-project:hover .project-img-container img {
   transform: scale(1.04);
 }/*# sourceMappingURL=style.css.map */
