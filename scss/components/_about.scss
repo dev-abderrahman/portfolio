@@ -1,79 +1,82 @@
 .about-section {
   @include flex-box(center, center);
-  background: $white;
+  background: $dark-gray;
   border-radius: 20px;
-  box-shadow: 0 10px 0 $orange;
-  .about-content {
-    @include flex-box(center, center, null, column);
-    max-width: 800px;
-    padding: 30px 20px;
-    color: $dark-gray;
-    text-align: center;
-    font-size: 22px;
-    line-height: 1.5;
-    .about-img-container {
-      position: relative;
+}
+
+.about-content {
+  @include flex-box(center, center, null, column);
+  max-width: 800px;
+  padding: 30px 20px;
+  color: $white;
+  text-align: center;
+  font-size: 22px;
+  line-height: 1.5;
+
+  h1 {
+    font-size: 48px;
+  }
+  p {
+    color: $gray;
+  }
+}
+
+.about-img-container {
+  position: relative;
+  border-radius: 50%;
+  img {
+    width: 120px;
+    height: 120px;
+    padding: 5px;
+    border-radius: 50%;
+    border: 3px solid $orange;
+  }
+  svg {
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+    width: 28px;
+    height: 28px;
+    padding: 5px;
+    background: $orange;
+    border-radius: 50%;
+  }
+}
+
+.socail-links {
+  @include flex-box(center, center, 20px);
+  margin-top: 10px;
+  a {
+    @include flex-box(center, center);
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border: 2px solid $gray;
+    border-radius: 50%;
+    transform: scale(0.97);
+    transition: 0.3s linear;
+    svg {
+      width: 28px;
+      height: 28px;
+      fill: $gray;
+    }
+    .arrow-up {
+      position: absolute;
+      opacity: 0;
+      transform: translate(-5px, 5px);
+      visibility: hidden;
       border-radius: 50%;
-      img {
-        width: 120px;
-        height: 120px;
-        padding: 5px;
-        border-radius: 50%;
-        border: 3px solid $orange;
-      }
-      svg {
-        position: absolute;
-        left: 8px;
-        bottom: 8px;
-        width: 28px;
-        height: 28px;
-        padding: 5px;
-        background: $orange;
-        border-radius: 50%;
-      }
+      background-color: $orange;
+      color: $white;
+      transition: 0.3s linear;
     }
-    h1 {
-      font-size: 48px;
-    }
-    p {
-      color: $gray;
-    }
-    .socail-links {
-      @include flex-box(center, center, 20px);
-      margin-top: 10px;
-      a {
-        @include flex-box(center, center);
-        position: relative;
-        width: 40px;
-        height: 40px;
-        border: 2px solid;
-        border-radius: 50%;
-         transform: scale(.97);
-         transition: .3s linear;
-        svg {
-          width: 28px;
-          height: 28px;
-          fill: $dark-gray;
-        }
-        .arrow-up {
-          position: absolute;
-          opacity: 0;
-          transform: translate(-5px, 5px);
-          visibility: hidden;
-          border-radius: 50%;
-          background-color: $orange;
-          color: $white;
-          transition: 0.3s linear;
-        }
-        &:hover {
-            transform: scale(1);
-            border-color: $orange;
-          .arrow-up {
-            opacity: 1;
-            transform: translate(0px);
-            visibility: visible;
-          }
-        }
+    &:hover {
+      transform: scale(1);
+      border-color: $orange;
+      .arrow-up {
+        opacity: 1;
+        transform: translate(0px);
+        visibility: visible;
       }
     }
   }
