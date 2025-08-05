@@ -29,7 +29,7 @@ header {
       padding: 4px;
       background: $dark-gray;
       border-radius: 32px;
-      border: 2px solid #ff87573f;
+      border: 1px solid #292928;
       .nav-item {
         @include flex-box(center, center);
         color: $white;

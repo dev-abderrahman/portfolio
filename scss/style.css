@@ -99,7 +99,7 @@ header .navigation .nav-list {
   padding: 4px;
   background: #262422;
   border-radius: 32px;
-  border: 2px solid rgba(255, 135, 87, 0.2470588235);
+  border: 1px solid #292928;
 }
 header .navigation .nav-list .nav-item {
   display: flex;
@@ -175,14 +175,35 @@ header .external-link button:hover .external-span-icon svg {
 }
 
 .about-section {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #262422;
   border-radius: 20px;
+  border: 2px solid rgba(128, 128, 128, 0.2823529412);
+  overflow: hidden;
+}
+.about-section::before, .about-section::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  filter: blur(100px);
+  background-color: #757575;
+}
+.about-section::before {
+  left: 0;
+  top: 0;
+}
+.about-section::after {
+  right: 0;
+  bottom: 0;
 }
 
 .about-content {
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -196,9 +217,6 @@ header .external-link button:hover .external-span-icon svg {
 }
 .about-content h1 {
   font-size: 48px;
-}
-.about-content p {
-  color: #757575;
 }
 
 .about-img-container {
@@ -237,7 +255,7 @@ header .external-link button:hover .external-span-icon svg {
   position: relative;
   width: 40px;
   height: 40px;
-  border: 2px solid #757575;
+  border: 2px solid #fffefc;
   border-radius: 50%;
   transform: scale(0.97);
   transition: 0.3s linear;
@@ -245,7 +263,7 @@ header .external-link button:hover .external-span-icon svg {
 .socail-links a svg {
   width: 28px;
   height: 28px;
-  fill: #757575;
+  fill: #fffefc;
 }
 .socail-links a .arrow-up {
   position: absolute;
@@ -279,16 +297,23 @@ header .external-link button:hover .external-span-icon svg {
   font-size: 42px;
 }
 
-.card-project {
+.projects-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 20px;
-  max-width: 900px;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.card-project {
+  position: relative;
+  flex-grow: 1;
+  max-width: 400px;
   height: -moz-fit-content;
   height: fit-content;
   margin: 20px 0;
-  padding: 20px;
+  padding: 5px;
   border: 2px solid #262422;
   border-radius: 20px;
   transition: border 0.3s linear;
@@ -297,16 +322,27 @@ header .external-link button:hover .external-span-icon svg {
 }
 
 .projects-details {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   align-items: flex-start;
   flex-direction: column;
   gap: 10px;
-  max-width: 500px;
+  padding: 20px;
+  width: 100%;
+  background: rgba(38, 36, 34, 0.8274509804);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
   line-height: 1.5;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s linear;
 }
-.projects-details p {
-  color: #757575;
+.projects-details > * {
+  transform: translateX(-20px);
+  transition: all 0.3s linear;
 }
 .projects-details .languages {
   display: flex;
@@ -318,6 +354,7 @@ header .external-link button:hover .external-span-icon svg {
 .projects-details .languages span {
   padding: 4px 8px;
   border-radius: 8px;
+  font-size: 13px;
 }
 .projects-details .languages #html {
   background-color: rgba(255, 136, 0, 0.2823529412);
@@ -361,26 +398,25 @@ header .external-link button:hover .external-span-icon svg {
 }
 
 .project-img-container {
-  border: 2px solid #262422;
-  border-radius: 16px;
+  width: 100%;
+  height: 300px;
+  border-radius: 13px;
   transition: border 0.3s linear;
   overflow: hidden;
 }
 .project-img-container img {
-  width: 300px;
-  height: auto;
+  width: 100%;
+  height: 100%;
   border-radius: 10px;
   -o-object-fit: cover;
      object-fit: cover;
   transition: 0.3s linear;
 }
 
-.card-project:hover {
-  border-color: #fffefc;
+.card-project:hover .projects-details {
+  opacity: 1;
+  visibility: visible;
 }
-.card-project:hover .project-img-container {
-  border-color: #fffefc;
-}
-.card-project:hover .project-img-container img {
-  transform: scale(1.04);
+.card-project:hover .projects-details > * {
+  transform: translateX(0px);
 }/*# sourceMappingURL=style.css.map */
