@@ -501,7 +501,7 @@ header .external-link button .bi {
   flex-direction: column;
   gap: 10px;
   width: 100%;
-  min-height: 300px;
+  min-height: 200px;
   color: #fffefc;
   border-radius: 20px;
   overflow: hidden;
