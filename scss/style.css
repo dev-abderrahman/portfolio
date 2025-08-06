@@ -10,6 +10,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+  scroll-padding-top: 50px;
 }
 
 body {
@@ -57,7 +59,7 @@ img {
 
 section {
   width: 100%;
-  min-height: 400px;
+  min-height: 500px;
   padding: 30px 0;
 }
 section .section-heading {
@@ -105,7 +107,7 @@ header .navigation .nav-list {
   padding: 4px;
   background: #262422;
   border-radius: 32px;
-  border: 1px solid rgba(128, 128, 128, 0.2823529412);
+  border: 1.3px solid rgba(128, 128, 128, 0.2823529412);
 }
 header .navigation .nav-list .nav-item {
   display: flex;
@@ -130,6 +132,7 @@ header .external-link button {
   align-items: center;
   gap: 10px;
   padding: 8px 16px;
+  height: 42px;
   background-color: #fffefc;
   color: #262422;
   border-radius: 8px;
@@ -149,7 +152,7 @@ header .external-link button .bi {
   align-items: center;
   background: #262422;
   border-radius: 20px;
-  border: 1px solid rgba(128, 128, 128, 0.2823529412);
+  border: 1.3px solid rgba(128, 128, 128, 0.2823529412);
   overflow: hidden;
 }
 .about-section::before, .about-section::after {
@@ -159,6 +162,7 @@ header .external-link button .bi {
   height: 150px;
   filter: blur(100px);
   background-color: #757575;
+  border-radius: 50%;
 }
 .about-section::before {
   left: 0;
@@ -218,7 +222,7 @@ header .external-link button .bi {
   padding: 4px;
   background-color: #1f1e1d;
   border-radius: 30px;
-  border: 1px solid rgba(128, 128, 128, 0.2823529412);
+  border: 1.3px solid rgba(128, 128, 128, 0.2823529412);
 }
 .socail-links a {
   position: relative;
@@ -286,7 +290,7 @@ header .external-link button .bi {
   height: fit-content;
   margin: 20px 0;
   padding: 5px;
-  border: 1px solid rgba(128, 128, 128, 0.2823529412);
+  border: 1.3px solid rgba(128, 128, 128, 0.2823529412);
   border-radius: 20px;
   transition: border 0.3s linear;
   cursor: pointer;
@@ -432,7 +436,7 @@ header .external-link button .bi {
   border-radius: 20px;
   transition: all 0.3s linear;
   overflow: hidden;
-  border: 1px solid rgba(128, 128, 128, 0.2823529412);
+  border: 1.3px solid rgba(128, 128, 128, 0.2823529412);
 }
 .list-skills li::before, .list-skills li::after {
   content: "";
@@ -441,6 +445,7 @@ header .external-link button .bi {
   height: 70px;
   filter: blur(100px);
   background-color: #757575;
+  border-radius: 50%;
 }
 .list-skills li::before {
   left: 0;
@@ -486,4 +491,70 @@ header .external-link button .bi {
 }
 .list-skills li:hover h3::before {
   width: 100%;
+}
+
+.footer-section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  min-height: 300px;
+  color: #fffefc;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1.3px solid rgba(128, 128, 128, 0.2823529412);
+}
+.footer-section::before, .footer-section::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  filter: blur(100px);
+  background-color: #757575;
+  border-radius: 50%;
+}
+.footer-section::before {
+  left: 0;
+  top: 0;
+}
+.footer-section::after {
+  right: 0;
+  bottom: 0;
+}
+
+.footer-content {
+  position: relative;
+  display: grid;
+  place-items: center;
+  gap: 10px;
+}
+.footer-content > * {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-btn button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  height: 42px;
+  padding: 8px 16px;
+  background-color: #fffefc;
+  border-radius: 20px;
+  border: 2px solid #262422;
+  outline: 2px solid #fffefc;
+  color: #262422;
+  font-size: 18px;
+  cursor: pointer;
+}
+.footer-btn button .bi {
+  font-size: 24px;
+}
+
+.footer-logo {
+  font-size: 32px;
 }/*# sourceMappingURL=style.css.map */

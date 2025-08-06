@@ -14,7 +14,8 @@
 
   <body>
     <div class="portfolio-wrapper">
-      <header>
+      <!-- portfolio header ========================= -->
+      <header class="portfolio-header">
         <a href="index.html" class="logo"> Devabdo </a>
         <nav class="navigation">
           <ul class="nav-list">
@@ -30,9 +31,11 @@
           </button>
         </a>
       </header>
+      <!-- portfolio sections ========================= -->
       <main class="main-sections">
-        <section class="about-section">
-          <div class="about-content">
+        <!-- about section ========================= -->
+        <section class="about-section" id="About">
+          <div class="section-content about-content">
             <div class="about-img-container">
               <img src="./assets/images/profile.jpg" alt="" />
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
@@ -65,10 +68,10 @@
             </div>
           </div>
         </section>
-
-        <section class="projects-section">
+        <!-- projects section ========================= -->
+        <section class="projects-section" id="Projects">
           <h1 class="section-heading">Projects</h1>
-          <div class="projects-content">
+          <div class="section-content projects-content">
             <div class="card-project">
               <div class="projects-details">
                 <h2>Landing page</h2>
@@ -105,32 +108,45 @@
             </div>
           </div>
         </section>
-        <section class="skills-section">
+        <!-- skills section ========================= -->
+        <section class="skills-section" id="Skills">
           <h1 class="section-heading">Skills</h1>
-          <ul class="list-skills">
+          <ul class="section-content list-skills">
             <li class="languages">
               <h3>Languages</h3>
-                <p>HTML5</p>
-                <p>CSS3</p>
-                <p>SCSS (CSS preprocessor)</p>
-                <p>JAVASCIRP (vanila)</p>
-                <p>react</p>
+              <p>HTML5</p>
+              <p>CSS3</p>
+              <p>SCSS (preprocessor)</p>
+              <p>JAVASCIRP (vanila)</p>
+              <p>react</p>
             </li>
             <li class="tools">
-                <h3>Tools</h3>
-                <p>VScode</p>
-                <p>Git & GitHub</p>
+              <h3>Tools</h3>
+              <p>VScode</p>
+              <p>Git & GitHub</p>
             </li>
             <li class="more">
-                <h3>More</h3>
-                <p>Responsive Design</p>
-                <p>REST APIs</p>
-                <p>JSX</p>
-                <p>JSON</p>
-                <p>ES6+</p>
+              <h3>More</h3>
+              <p>Responsive Design</p>
+              <p>REST APIs</p>
+              <p>JSX</p>
+              <p>JSON</p>
+              <p>ES6+</p>
             </li>
           </ul>
         </section>
+        <footer class="footer-section">
+          <div class="section-content footer-content">
+            <a href="#top" class="footer-btn" id="about">
+              <button>
+                top
+                <i class="bi bi-arrow-up-short"></i>
+              </button>
+            </a>
+            <a href="index.html" class="footer-logo"> Devabdo </a>
+            <p>&copy; 2025</p>
+          </div>
+        </footer>
       </main>
     </div>
     <script src="./js/index.js"></script>

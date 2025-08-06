@@ -1,3 +1,5 @@
+// variables file ============================= >
+
 // colors
 $white: #fffefc;
 $gray: #757575;
@@ -8,9 +10,9 @@ $orange: #ff8757;
 $heading-size: 42px;
 $text-size: 18px;
 $transition: all 0.3s linear;
+$border: 1.3px solid #80808048;
 
-$border: 1px solid #80808048;
-
+// flex box ============================= >
 @mixin flex-box($justify, $items, $gap: null, $direction: null) {
   display: flex;
   justify-content: $justify;
@@ -19,6 +21,7 @@ $border: 1px solid #80808048;
   gap: $gap;
 }
 
+// Glass effect ============================= >
 @mixin glass-effect($width, $height) {
   &::before,
   &::after {
@@ -28,6 +31,7 @@ $border: 1px solid #80808048;
     height: $height;
     filter: blur(100px);
     background-color: $gray;
+    border-radius: 50%;
   }
   &::before {
     left: 0;
@@ -38,10 +42,13 @@ $border: 1px solid #80808048;
     bottom: 0;
   }
 }
+// width and height element ============================= >
 @mixin w-h($w, $h) {
   width: $w;
   height: $h;
 }
+
+// hide or show element ============================= >
 @mixin hide-show-item($opacity, $visibility) {
   opacity: $opacity;
   visibility: $visibility;

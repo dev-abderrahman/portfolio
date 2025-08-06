@@ -10,6 +10,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+  scroll-padding-top: 50px;
 }
 
 body {
@@ -50,7 +52,7 @@ img {
 }
 section {
   width: 100%;
-  min-height: 400px;
+  min-height: 500px;
   padding: 30px 0;
   .section-heading {
     font-size: 42px;
