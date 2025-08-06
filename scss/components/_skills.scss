@@ -1,0 +1,73 @@
+.skills-section {
+  @include flex-box(start, center, 0px, column);
+  color: $white;
+}
+.skills-content {
+  @include flex-box(center, center, 10px);
+  flex-wrap: wrap;
+  width: 100%;
+}
+.list-skills {
+  position: relative;
+  @include flex-box(center, start, 20px);
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 20px;
+  li {
+    position: relative;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    max-width: 300px;
+    min-height: 250px;
+    padding: 20px;
+    border-radius: 20px;
+    transition: $transition;
+    overflow: hidden;
+    @include glass-effect(70px, 70px);
+    border: $border;
+    > * {
+      position: relative;
+    }
+    h3 {
+      padding-top: 10px;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%,-100%);
+        @include w-h(0%, 4px);
+        background: linear-gradient(
+          90deg,
+          transparent,
+          #4e4e4e,
+          transparent
+        );
+        border-radius: 100%;
+        transition: $transition;
+      }
+    }
+    p {
+      color: $gray;
+      transition: $transition;
+      font-size: 19px;
+      margin: 10px 0;
+      text-transform: lowercase;
+      transform: scale(0.99);
+      cursor: pointer;
+      &:hover {
+        color: $orange;
+        transform: scale(1);
+      }
+    }
+    &:hover {
+      border-color: #4e4e4e;
+      h3{
+        &::before{
+          width: 100%;
+        }
+      }
+    }
+  }
+}

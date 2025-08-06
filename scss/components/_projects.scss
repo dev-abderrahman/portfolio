@@ -1,0 +1,114 @@
+.projects-section {
+  @include flex-box(start, center, 0px, column);
+  color: $dark-gray;
+}
+.projects-content {
+  @include flex-box(center, center, 10px);
+  flex-wrap: wrap;
+  width: 100%;
+}
+.card-project {
+  position: relative;
+  flex-grow: 1;
+  max-width: 400px;
+  height: fit-content;
+  margin: 20px 0;
+  padding: 5px;
+  border: $border;
+  border-radius: 20px;
+  transition: border 0.3s linear;
+  cursor: pointer;
+  overflow: hidden;
+}
+.projects-details {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  @include flex-box(end, flex-start, 10px, column);
+  padding: 20px;
+  width: 100%;
+  background: #262422d3;
+  backdrop-filter: blur(20px);
+  line-height: 1.5;
+  @include hide-show-item(0, hidden);
+  transition: $transition;
+  > * {
+    transform: translateX(-20px);
+    transition: $transition;
+  }
+  .languages {
+    @include flex-box(flex-start, start, 10px);
+    flex-wrap: wrap;
+    span {
+      padding: 4px 8px;
+      border-radius: 8px;
+      font-size: 13px;
+    }
+    #html {
+      background-color: #ff880048;
+      color: #ff8800;
+    }
+    #css {
+      background-color: #002fff48;
+      color: #7e96ff;
+    }
+    #js {
+      background-color: #ffe60048;
+      color: #ffe600;
+    }
+  }
+  .demo-link-projects {
+    @include flex-box(center, center, 10px);
+    height: 42px;
+    padding: 8px 20px;
+    margin-top: 20px;
+    background: $white;
+    color: $dark-gray;
+    border-radius: 30px;
+
+    @keyframes arrow-up {
+      0% {
+        transform: translate(-5px, 5px);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(0px);
+        opacity: 1;
+      }
+    }
+    .bi {
+      font-size: 19px;
+    }
+    &:hover {
+      .bi {
+        animation: arrow-up 0.3s linear;
+      }
+    }
+  }
+}
+
+.project-img-container {
+  width: 100%;
+  height: 300px;
+  border-radius: 13px;
+  transition: border 0.3s linear;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: 0.3s linear;
+  }
+}
+
+.card-project {
+  &:hover {
+    .projects-details {
+      @include hide-show-item(1, visible);
+      > * {
+        transform: translateX(0px);
+      }
+    }
+  }
+}
