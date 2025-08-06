@@ -1,4 +1,4 @@
-// colors 
+// colors
 $white: #fffefc;
 $gray: #757575;
 $dark-gray: #262422;
@@ -7,12 +7,42 @@ $orange: #ff8757;
 
 $heading-size: 42px;
 $text-size: 18px;
+$transition: all 0.3s linear;
 
+$border: 1px solid #80808048;
 
-@mixin flex-box($justify, $items, $gap: null, $direction: null){
-    display: flex;
-    justify-content: $justify;
-    align-items: $items;
-    flex-direction: $direction;
-    gap: $gap;
+@mixin flex-box($justify, $items, $gap: null, $direction: null) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $items;
+  flex-direction: $direction;
+  gap: $gap;
+}
+
+@mixin glass-effect($width, $height) {
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: $width;
+    height: $height;
+    filter: blur(100px);
+    background-color: $gray;
+  }
+  &::before {
+    left: 0;
+    top: 0;
+  }
+  &::after {
+    right: 0;
+    bottom: 0;
+  }
+}
+@mixin w-h($w, $h) {
+  width: $w;
+  height: $h;
+}
+@mixin hide-show-item($opacity, $visibility) {
+  opacity: $opacity;
+  visibility: $visibility;
 }

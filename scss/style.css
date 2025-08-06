@@ -37,7 +37,7 @@ textarea {
 }
 
 h1,
-h2 h3 h4 h5 h6 {
+h2, h3, h4, h5, h6 {
   font-family: "bold-Montserrat";
 }
 
@@ -50,17 +50,23 @@ img {
   margin: auto;
 }
 
-.portfolio-wrapper .main-sections {
+.main-sections {
   padding: 20px;
   margin-top: 60px;
 }
-.portfolio-wrapper .main-sections section {
+
+section {
   width: 100%;
   min-height: 400px;
   padding: 30px 0;
 }
-.portfolio-wrapper .main-sections section .section-heading {
+section .section-heading {
   font-size: 42px;
+  text-shadow: 0 0 50px white;
+  color: white;
+}
+section .arrow-up {
+  transform: translate(-5px, 5px);
 }
 
 header {
@@ -87,7 +93,7 @@ header .logo::before {
   left: 0;
   width: 4px;
   height: 100%;
-  background: #ff8757;
+  background: #fffefc;
   border-radius: 8px;
 }
 header .navigation .nav-list {
@@ -99,7 +105,7 @@ header .navigation .nav-list {
   padding: 4px;
   background: #262422;
   border-radius: 32px;
-  border: 1px solid #292928;
+  border: 1px solid rgba(128, 128, 128, 0.2823529412);
 }
 header .navigation .nav-list .nav-item {
   display: flex;
@@ -112,12 +118,9 @@ header .navigation .nav-list .nav-item {
   padding: 0 10px;
   border-radius: 32px;
   font-size: 18px;
-  transition: 0.3s linear;
+  transition: all 0.3s linear;
 }
-header .navigation .nav-list .nav-item.active-item {
-  background: #ff8757;
-}
-header .navigation .nav-list .nav-item:hover:not(.active-item) {
+header .navigation .nav-list .nav-item:hover {
   background-color: #292928;
 }
 header .external-link button {
@@ -134,44 +137,9 @@ header .external-link button {
   cursor: pointer;
   overflow: hidden;
 }
-header .external-link button svg {
-  width: 30px;
-  height: 30px;
-  color: #262422;
-}
-header .external-link button .external-span-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #ff8757;
-  color: #fffefc;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.3s linear;
-}
-header .external-link button .external-span-icon > * {
-  transition: 0.3s linear;
-}
-header .external-link button .external-span-icon p {
-  margin-left: -10px;
-}
-header .external-link button .external-span-icon svg {
-  color: #fffefc;
-  transform: translate(-5px, 5px);
-}
-header .external-link button:hover .external-span-icon {
-  opacity: 1;
-  visibility: visible;
-}
-header .external-link button:hover .external-span-icon p {
-  margin-left: 0;
-}
-header .external-link button:hover .external-span-icon svg {
-  transform: translate(0px);
+header .external-link button .bi {
+  font-size: 19px;
+  transition: all 0.3s linear;
 }
 
 .about-section {
@@ -181,14 +149,14 @@ header .external-link button:hover .external-span-icon svg {
   align-items: center;
   background: #262422;
   border-radius: 20px;
-  border: 2px solid rgba(128, 128, 128, 0.2823529412);
+  border: 1px solid rgba(128, 128, 128, 0.2823529412);
   overflow: hidden;
 }
 .about-section::before, .about-section::after {
   content: "";
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 150px;
   filter: blur(100px);
   background-color: #757575;
 }
@@ -228,7 +196,7 @@ header .external-link button:hover .external-span-icon svg {
   height: 120px;
   padding: 5px;
   border-radius: 50%;
-  border: 3px solid #ff8757;
+  border: 3px solid #fffefc;
 }
 .about-img-container svg {
   position: absolute;
@@ -237,7 +205,7 @@ header .external-link button:hover .external-span-icon svg {
   width: 28px;
   height: 28px;
   padding: 5px;
-  background: #ff8757;
+  background: #fffefc;
   border-radius: 50%;
 }
 
@@ -245,44 +213,51 @@ header .external-link button:hover .external-span-icon svg {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
   margin-top: 10px;
+  padding: 4px;
+  background-color: #1f1e1d;
+  border-radius: 30px;
+  border: 1px solid rgba(128, 128, 128, 0.2823529412);
 }
 .socail-links a {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   width: 40px;
   height: 40px;
-  border: 2px solid #fffefc;
+  background-color: #262422;
   border-radius: 50%;
   transform: scale(0.97);
-  transition: 0.3s linear;
+  transition: all 0.3s linear;
+  overflow: hidden;
 }
-.socail-links a svg {
-  width: 28px;
-  height: 28px;
-  fill: #fffefc;
+.socail-links a .bi {
+  font-size: 18px;
+  color: #fffefc;
 }
 .socail-links a .arrow-up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  opacity: 0;
-  transform: translate(-5px, 5px);
-  visibility: hidden;
+  width: 100%;
+  aspect-ratio: 1;
   border-radius: 50%;
-  background-color: #ff8757;
-  color: #fffefc;
-  transition: 0.3s linear;
+  background-color: #fffefc;
+  color: #262422;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s linear;
 }
 .socail-links a:hover {
-  transform: scale(1);
-  border-color: #ff8757;
+  border-color: #fffefc;
 }
 .socail-links a:hover .arrow-up {
   opacity: 1;
-  transform: translate(0px);
   visibility: visible;
+  transform: translate(0px);
 }
 
 .projects-section {
@@ -291,10 +266,7 @@ header .external-link button:hover .external-span-icon svg {
   align-items: center;
   flex-direction: column;
   gap: 0px;
-  color: #fffefc;
-}
-.projects-section h1 {
-  font-size: 42px;
+  color: #262422;
 }
 
 .projects-content {
@@ -314,7 +286,7 @@ header .external-link button:hover .external-span-icon svg {
   height: fit-content;
   margin: 20px 0;
   padding: 5px;
-  border: 2px solid #262422;
+  border: 1px solid rgba(128, 128, 128, 0.2823529412);
   border-radius: 20px;
   transition: border 0.3s linear;
   cursor: pointer;
@@ -338,7 +310,7 @@ header .external-link button:hover .external-span-icon svg {
   line-height: 1.5;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.4s linear;
+  transition: all 0.3s linear;
 }
 .projects-details > * {
   transform: translateX(-20px);
@@ -372,11 +344,12 @@ header .external-link button:hover .external-span-icon svg {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 10px;
   height: 42px;
   padding: 8px 20px;
   margin-top: 20px;
-  background: #ff8757;
-  color: #fffefc;
+  background: #fffefc;
+  color: #262422;
   border-radius: 30px;
 }
 @keyframes arrow-up {
@@ -389,11 +362,10 @@ header .external-link button:hover .external-span-icon svg {
     opacity: 1;
   }
 }
-.projects-details .demo-link-projects svg {
-  width: 24px;
-  height: 24px;
+.projects-details .demo-link-projects .bi {
+  font-size: 19px;
 }
-.projects-details .demo-link-projects:hover svg {
+.projects-details .demo-link-projects:hover .bi {
   animation: arrow-up 0.3s linear;
 }
 
@@ -419,4 +391,99 @@ header .external-link button:hover .external-span-icon svg {
 }
 .card-project:hover .projects-details > * {
   transform: translateX(0px);
+}
+
+.skills-section {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  gap: 0px;
+  color: #fffefc;
+}
+
+.skills-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.list-skills {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 20px;
+}
+.list-skills li {
+  position: relative;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  max-width: 300px;
+  min-height: 250px;
+  padding: 20px;
+  border-radius: 20px;
+  transition: all 0.3s linear;
+  overflow: hidden;
+  border: 1px solid rgba(128, 128, 128, 0.2823529412);
+}
+.list-skills li::before, .list-skills li::after {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  filter: blur(100px);
+  background-color: #757575;
+}
+.list-skills li::before {
+  left: 0;
+  top: 0;
+}
+.list-skills li::after {
+  right: 0;
+  bottom: 0;
+}
+.list-skills li > * {
+  position: relative;
+}
+.list-skills li h3 {
+  padding-top: 10px;
+}
+.list-skills li h3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  width: 0%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #4e4e4e, transparent);
+  border-radius: 100%;
+  transition: all 0.3s linear;
+}
+.list-skills li p {
+  color: #757575;
+  transition: all 0.3s linear;
+  font-size: 19px;
+  margin: 10px 0;
+  text-transform: lowercase;
+  transform: scale(0.99);
+  cursor: pointer;
+}
+.list-skills li p:hover {
+  color: #ff8757;
+  transform: scale(1);
+}
+.list-skills li:hover {
+  border-color: #4e4e4e;
+}
+.list-skills li:hover h3::before {
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */

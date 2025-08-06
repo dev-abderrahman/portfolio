@@ -3,24 +3,9 @@
   @include flex-box(center, center);
   background: $dark-gray;
   border-radius: 20px;
-  border: 2px solid #80808048;
+  border: $border;
   overflow: hidden;
-  &::before,&::after{
-    content: "";
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    filter: blur(100px);
-    background-color: $gray;
-  }
-  &::before{
-    left: 0;
-    top: 0;
-  }
-  &::after{
-    right: 0;
-    bottom: 0;
-  }
+  @include glass-effect(100px, 150px);
 }
 
 .about-content {
@@ -43,58 +28,58 @@
   position: relative;
   border-radius: 50%;
   img {
-    width: 120px;
-    height: 120px;
+    @include w-h(120px, 120px);
     padding: 5px;
     border-radius: 50%;
-    border: 3px solid $orange;
+    border: 3px solid $white;
   }
   svg {
     position: absolute;
     left: 8px;
     bottom: 8px;
-    width: 28px;
-    height: 28px;
+    @include w-h(28px, 28px);
     padding: 5px;
-    background: $orange;
+    background: $white;
     border-radius: 50%;
   }
 }
 
 .socail-links {
-  @include flex-box(center, center, 20px);
+  @include flex-box(center, center, 10px);
   margin-top: 10px;
+  padding: 4px;
+  background-color: $almost-black;
+  border-radius: 30px;
+  border: $border;
   a {
-    @include flex-box(center, center);
     position: relative;
-    width: 40px;
-    height: 40px;
-    border: 2px solid $white;
+    @include flex-box(center, center);
+    @include w-h(40px, 40px);
+    background-color: $dark-gray;
     border-radius: 50%;
     transform: scale(0.97);
-    transition: 0.3s linear;
-    svg {
-      width: 28px;
-      height: 28px;
-      fill: $white;
+    transition: $transition;
+    overflow: hidden;
+    .bi {
+      font-size: 18px;
+      color: $white;
     }
     .arrow-up {
+      @include flex-box(center, center);
       position: absolute;
-      opacity: 0;
-      transform: translate(-5px, 5px);
-      visibility: hidden;
+      width: 100%;
+      aspect-ratio: 1;
       border-radius: 50%;
-      background-color: $orange;
-      color: $white;
-      transition: 0.3s linear;
+      background-color: $white;
+      color: $dark-gray;
+      @include hide-show-item(0, hidden);
+      transition: $transition;
     }
     &:hover {
-      transform: scale(1);
-      border-color: $orange;
+      border-color: $white;
       .arrow-up {
-        opacity: 1;
+        @include hide-show-item(1, visible);
         transform: translate(0px);
-        visibility: visible;
       }
     }
   }

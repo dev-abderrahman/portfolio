@@ -18,7 +18,7 @@ header {
       left: 0;
       width: 4px;
       height: 100%;
-      background: $orange;
+      background: $white;
       border-radius: 8px;
     }
   }
@@ -29,7 +29,7 @@ header {
       padding: 4px;
       background: $dark-gray;
       border-radius: 32px;
-      border: 1px solid #292928;
+      border: $border;
       .nav-item {
         @include flex-box(center, center);
         color: $white;
@@ -38,11 +38,8 @@ header {
         padding: 0 10px;
         border-radius: 32px;
         font-size: $text-size;
-        transition: 0.3s linear;
-        &.active-item {
-          background: $orange;
-        }
-        &:hover:not(.active-item) {
+        transition: $transition;
+        &:hover {
           background-color: #292928;
         }
       }
@@ -59,43 +56,9 @@ header {
       font-size: $text-size;
       cursor: pointer;
       overflow: hidden;
-      svg {
-        width: 30px;
-        height: 30px;
-        color: $dark-gray;
-      }
-      .external-span-icon {
-        @include flex-box(center, center, 10px);
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: $orange;
-        color: $white;
-        opacity: 0;
-        visibility: hidden;
-        transition: 0.3s linear;
-        > * {
-          transition: 0.3s linear;
-        }
-        p {
-          margin-left: -10px;
-        }
-        svg {
-          color: $white;
-          transform: translate(-5px, 5px);
-        }
-      }
-      &:hover {
-        .external-span-icon {
-          opacity: 1;
-          visibility: visible;
-          p {
-            margin-left: 0;
-          }
-          svg {
-            transform: translate(0px);
-          }
-        }
+      .bi {
+        font-size: 19px;
+        transition: $transition;
       }
     }
   }
