@@ -1,6 +1,6 @@
 // portfolio about me  ============================= >
 
-header {
+.portfolio-header {
   @include flex-box(space-between, center);
   position: fixed;
   inset: 0;
@@ -10,44 +10,38 @@ header {
   padding: 0 20px;
   background-color: $almost-black;
   .logo {
-    position: relative;
-    padding-left: 15px;
-    color: $white;
-    font-size: 32px;
-    &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: $white;
-      border-radius: 8px;
+    img {
+      height: 30px;
+      width: 100%;
     }
   }
-  .navigation {
-    .nav-list {
-      @include flex-box(center, center, 10px);
-      height: 48px;
-      padding: 4px;
-      background: $dark-gray;
+  .nav-list {
+    @include flex-box(center, center, 10px);
+    height: 48px;
+    padding: 4px;
+    background: $dark-gray;
+    border-radius: 32px;
+    border: $border;
+    li {
+      height: 100%;
+    }
+    a {
+      @include flex-box(center, center);
+      color: $white;
+      height: 100%;
+      width: fit-content;
+      padding: 0 10px;
       border-radius: 32px;
-      border: $border;
-      .nav-item {
-        @include flex-box(center, center);
-        color: $white;
-        height: 100%;
-        width: fit-content;
-        padding: 0 10px;
-        border-radius: 32px;
-        font-size: $text-size;
-        transition: $transition;
-        &:hover {
-          background-color: #292928;
-        }
+      font-size: $text-size;
+      transition: $transition;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #292928;
       }
     }
   }
-  .external-link {
+  .github-link {
     button {
       position: relative;
       @include flex-box(center, center, 10px);

@@ -16,20 +16,24 @@
     <div class="portfolio-wrapper">
       <!-- portfolio header ========================= -->
       <header class="portfolio-header">
-        <a href="index.html" class="logo"> Devabdo </a>
-        <nav class="navigation">
-          <ul class="nav-list">
-            <li class="nav-item active-item"><a href="#About">About</a></li>
-            <li class="nav-item"><a href="#Projects">Projects</a></li>
-            <li class="nav-item"><a href="#Skills">Skills</a></li>
-          </ul>
-        </nav>
-        <a href="#" class="external-link">
+        <a href="index.html" class="logo">
+          <img src="./assets/logo/portfolio-logo.svg" alt="logo" />
+        </a>
+        <ul class="nav-list">
+          <li class="nav-item active-item"><a href="#">About</a></li>
+          <li class="nav-item"><a href="#Projects">Projects</a></li>
+          <li class="nav-item"><a href="#Skills">Skills</a></li>
+        </ul>
+        <a href="#" class="github-link">
           <button>
             <i class="bi bi-github"></i>
-            github
+            <span>GitHub</span>
           </button>
         </a>
+        <button class="menu-btn">
+          <span></span>
+          <span></span>
+        </button>
       </header>
       <!-- portfolio sections ========================= -->
       <main class="main-sections">
@@ -72,40 +76,7 @@
         <section class="projects-section" id="Projects">
           <h1 class="section-heading">Projects</h1>
           <div class="section-content projects-content">
-            <div class="card-project">
-              <div class="projects-details">
-                <h2>Landing page</h2>
-                <div class="languages">
-                  <span id="html">HTML</span>
-                  <span id="css">CSS</span>
-                  <span id="js">JAVASCIRP</span>
-                </div>
-                <a href="#" class="demo-link-projects">
-                  visit
-                  <i class="bi bi-arrow-up-right"></i>
-                </a>
-              </div>
-              <div class="project-img-container">
-                <img src="d-2.png" alt="project image" />
-              </div>
-            </div>
-            <div class="card-project">
-              <div class="projects-details">
-                <h2>Coffee site</h2>
-                <div class="languages">
-                  <span id="html">HTML</span>
-                  <span id="css">CSS</span>
-                  <span id="js">JAVASCIRP</span>
-                </div>
-                <a href="#" class="demo-link-projects">
-                  visit
-                  <i class="bi bi-arrow-up-right"></i>
-                </a>
-              </div>
-              <div class="project-img-container">
-                <img src="d-1.png" alt="project image" />
-              </div>
-            </div>
+            <!-- projects generated from ./js/index.js file -->
           </div>
         </section>
         <!-- skills section ========================= -->
@@ -143,7 +114,9 @@
                 <i class="bi bi-arrow-up-short"></i>
               </button>
             </a>
-            <a href="index.html" class="footer-logo"> Devabdo </a>
+            <a href="index.html" class="footer-logo">
+              <img src="./assets/logo/portfolio-logo.svg" alt="logo" />
+            </a>
             <p>&copy; 2025</p>
           </div>
         </footer>

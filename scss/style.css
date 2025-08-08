@@ -55,6 +55,7 @@ img {
 .main-sections {
   padding: 20px;
   margin-top: 60px;
+  transition: all 0.3s linear;
 }
 
 section {
@@ -71,7 +72,7 @@ section .arrow-up {
   transform: translate(-5px, 5px);
 }
 
-header {
+.portfolio-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -83,22 +84,11 @@ header {
   padding: 0 20px;
   background-color: #1f1e1d;
 }
-header .logo {
-  position: relative;
-  padding-left: 15px;
-  color: #fffefc;
-  font-size: 32px;
+.portfolio-header .logo img {
+  height: 30px;
+  width: 100%;
 }
-header .logo::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: #fffefc;
-  border-radius: 8px;
-}
-header .navigation .nav-list {
+.portfolio-header .nav-list {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -109,7 +99,10 @@ header .navigation .nav-list {
   border-radius: 32px;
   border: 1.3px solid rgba(128, 128, 128, 0.2823529412);
 }
-header .navigation .nav-list .nav-item {
+.portfolio-header .nav-list li {
+  height: 100%;
+}
+.portfolio-header .nav-list a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,11 +114,12 @@ header .navigation .nav-list .nav-item {
   border-radius: 32px;
   font-size: 18px;
   transition: all 0.3s linear;
+  cursor: pointer;
 }
-header .navigation .nav-list .nav-item:hover {
+.portfolio-header .nav-list a:hover {
   background-color: #292928;
 }
-header .external-link button {
+.portfolio-header .github-link button {
   position: relative;
   display: flex;
   justify-content: center;
@@ -140,7 +134,7 @@ header .external-link button {
   cursor: pointer;
   overflow: hidden;
 }
-header .external-link button .bi {
+.portfolio-header .github-link button .bi {
   font-size: 19px;
   transition: all 0.3s linear;
 }
@@ -284,8 +278,7 @@ header .external-link button .bi {
 
 .card-project {
   position: relative;
-  flex-grow: 1;
-  max-width: 400px;
+  width: 300px;
   height: -moz-fit-content;
   height: fit-content;
   margin: 20px 0;
@@ -309,8 +302,7 @@ header .external-link button .bi {
   padding: 20px;
   width: 100%;
   background: rgba(38, 36, 34, 0.8274509804);
-  -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
+  color: #fffefc;
   line-height: 1.5;
   opacity: 0;
   visibility: hidden;
@@ -429,8 +421,7 @@ header .external-link button .bi {
 .list-skills li {
   position: relative;
   flex-wrap: wrap;
-  flex-grow: 1;
-  max-width: 300px;
+  width: 300px;
   min-height: 250px;
   padding: 20px;
   border-radius: 20px;
@@ -498,8 +489,6 @@ header .external-link button .bi {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  gap: 10px;
   width: 100%;
   min-height: 200px;
   color: #fffefc;
@@ -529,7 +518,7 @@ header .external-link button .bi {
   position: relative;
   display: grid;
   place-items: center;
-  gap: 10px;
+  gap: 20px;
 }
 .footer-content > * {
   position: relative;
@@ -541,8 +530,8 @@ header .external-link button .bi {
   justify-content: center;
   align-items: center;
   gap: 5px;
-  height: 42px;
-  padding: 8px 16px;
+  height: 38px;
+  padding: 8px 13px;
   background-color: #fffefc;
   border-radius: 20px;
   border: 2px solid #262422;
@@ -555,6 +544,97 @@ header .external-link button .bi {
   font-size: 24px;
 }
 
-.footer-logo {
-  font-size: 32px;
+.footer-logo img {
+  width: 105px;
+}
+
+.menu-btn {
+  position: relative;
+  display: none;
+  width: 40px;
+  height: 30px;
+  cursor: pointer;
+}
+.menu-btn span {
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 3px;
+  background: #fffefc;
+  border-radius: 5px;
+  box-shadow: 0 0 20px #fffefc;
+  transition: all 0.3s linear;
+}
+.menu-btn span:nth-child(1) {
+  margin-top: -10px;
+}
+.menu-btn span:nth-child(2) {
+  width: 70%;
+  margin-top: 10px;
+}
+
+@media (max-width: 700px) {
+  .menu-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .portfolio-header .github-link span {
+    display: none;
+  }
+  .portfolio-header .nav-list {
+    position: absolute;
+    inset: 0;
+    top: 75px;
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    height: 100vh;
+    padding: 20px;
+    border-radius: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s linear;
+  }
+  .portfolio-header .nav-list li {
+    height: 42px;
+  }
+  .portfolio-header .nav-list a {
+    color: #757575;
+  }
+  .portfolio-header .nav-list a:hover {
+    background-color: initial;
+    color: #fffefc;
+    text-shadow: 0 0 10px;
+  }
+  .portfolio-wrapper.openMenu .main-sections {
+    filter: blur(20px);
+    opacity: 0;
+    visibility: hidden;
+  }
+  .portfolio-wrapper.openMenu .menu-btn span {
+    margin-top: 0px;
+    width: 70%;
+  }
+  .portfolio-wrapper.openMenu .menu-btn span:nth-child(1) {
+    transform: rotate(-140deg);
+  }
+  .portfolio-wrapper.openMenu .menu-btn span:nth-child(2) {
+    transform: rotate(-40deg);
+  }
+  .portfolio-wrapper.openMenu .nav-list {
+    opacity: 1;
+    visibility: visible;
+  }
+  .about-content h1 {
+    font-size: 30px;
+  }
+  .projects-content .card-project {
+    flex-grow: 1;
+  }
+  .list-skills li {
+    flex-grow: 1;
+  }
 }/*# sourceMappingURL=style.css.map */

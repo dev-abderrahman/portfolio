@@ -11,8 +11,7 @@
 }
 .card-project {
   position: relative;
-  flex-grow: 1;
-  max-width: 400px;
+  width: 300px;
   height: fit-content;
   margin: 20px 0;
   padding: 5px;
@@ -30,7 +29,7 @@
   padding: 20px;
   width: 100%;
   background: #262422d3;
-  backdrop-filter: blur(20px);
+  color: $white;
   line-height: 1.5;
   @include hide-show-item(0, hidden);
   transition: $transition;
